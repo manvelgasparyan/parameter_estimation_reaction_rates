@@ -3,9 +3,9 @@ This repository contains the Matlab library corresponding to the manuscript "Par
 The MATLAB library uses the information of a given CRN and the available observed time-series experimental data of reaction rates provided by the user to automatically  
 determine the best-fitting values of the parameters contained in the corresponding mathematical model. 
 
-We have provided two real-life computaional models of biologial processes retrieved from the BioModels database https://www.ebi.ac.uk/biomodels/. For each of these models we first generate data corresponding to the overall outgoing reaction rates with initially provided values of parameters involved in the model. Next, we perturbe these data with a white Gaussian noise with zero mean and sfficiently small standard deviation. We then apply our parameter estimation technique to determine the best-fitting values of parameters in a fully automated model.
+We have provided two real-life computaional models of biologial processes retrieved from the BioModels database( see, [1] and https://www.ebi.ac.uk/biomodels/). For each of these models we first generate data corresponding to the overall outgoing reaction rates with initially provided values of parameters involved in the model. Next, we perturbe these data with a white Gaussian noise with zero mean and sfficiently small standard deviation. We then apply our parameter estimation technique to determine the best-fitting values of parameters in a fully automated model.
 
-The first example of these realistic examples is a model of Ryanodine Receptor Adaptation (RyRA) (see, [ ]), which is a model of the network governed by mass action kinetic rate law. The second one is a model of Protein Kinease Cascades (PKC) (see, []), which is a model of a network governed by reversible Michaelis-Menten kinetics. The schematic representations of these two models can be found in the file named "Schematic" located in the folder "Figures". Since the governing laws of these two examples of CRNs are different, we consider the parameter estimation problem for each of these CRNs separately. 
+The first one of these realistic examples is a model of Ryanodine Receptor Adaptation (RyRA) (see, [2]), which is a model of the network governed by mass action kinetic rate law. The second example is a model of Protein Kinease Cascades (PKC) (see, [3]), which is a model of a network governed by reversible Michaelis-Menten kinetics. The schematic representations of these two models can be found in the file named "Schematic" located in the folder "Figures". Since the governing laws of these two examples of CRNs are different, we consider the parameter estimation problem for each of these CRNs separately. 
 
 WE ARE HERE
 
@@ -18,3 +18,18 @@ The file named "Inputs" contains the following information of a given CRN
      3. The vector of rate constants of the reactions.
      4. The vector of initial species' concentrations.
      5. The user-specified threshold value of the error integral. 
+
+
+REFERENCES
+
+[1]  Nicolas Le Novere et al. 
+     Biomodels Database: a Free, Centralized Database of Curated, Pub647 lished, Quantitative Kinetic Models of Biochemical and Cellular Systems. 
+     Nucleic Acids Research, 34:D689–D691, 2006.
+
+[2]  Joel Keizer and Leslie Levine. 
+     Ryanodine Receptor Adaptation and Ca2+ (-) Induced Ca2+ Release-dependent Ca2+ Oscillations. 
+     Biophysical Journal, 71(6):3477–3487, 1996.
+     
+[3]   Nick Markevich, Jan Hoek, and Boris Kholodenko. 
+      Signaling Switches and Bistability Arising from Multisite Phosphorylation in Protein Kinase Cascades. 
+      The Journal of Cell Biology, 164(3):353–359, 2004     

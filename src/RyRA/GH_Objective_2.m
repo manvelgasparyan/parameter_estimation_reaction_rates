@@ -1,12 +1,21 @@
 function [objective] = GH_Objective_2(k, S, x, w, H)
-[~,N] = size(x);
-Delta = -min(S,0);
-for i = 1:N
-    v(:,i) = diag(k)*exp(Delta'*log(x(:,i))); 
-end
-phi = exp(Delta'*log(x));
-Gamma_k = diag(k);
-v = Gamma_k*phi;
-y = H*v;
-objective = GH_Least_Squares_Error(y,w);
+    %-----------------------------------------------
+    %The number of time points
+    [~,N] = size(x);
+    %-----------------------------------------------
+    %The substrate composition matrix
+    Delta = -min(S,0);
+    %-----------------------------------------------
+    %The vector of reaction rates
+    phi = exp(Delta'*log(x));
+    Gamma_k = diag(k);
+    v = Gamma_k*phi;
+    %-----------------------------------------------
+    %The output, whic is the vector of overall 
+    %outgoing reactio rates
+    y = H*v;
+    %-----------------------------------------------
+    %The error between the available experimental 
+    %data and the corresponding model-predicted data
+    objective = GH_Least_Squares_Error(y,w);
 end

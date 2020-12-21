@@ -1,6 +1,8 @@
 function [x_hat] = GH_Data_Species_Concentrations (mu_1, mu_2, T, H, S, y_hat, x_test)
+   %Time division for the available data
    t_1 = 0:T/mu_1:T;
    %------------------------------------------------------------
+   %Time division for the model-predicted data
    t_2 = 0:T/mu_2:T;
    %------------------------------------------------------------
    N_2 = mu_2 + 1;
@@ -22,5 +24,6 @@ function [x_hat] = GH_Data_Species_Concentrations (mu_1, mu_2, T, H, S, y_hat, x
    %---------------------------------------------------------------
    options = optimset('MaxFunEvals',500);
    %---------------------------------------------------------------
+   %Data of species' concentrations 
    x_hat = fminsearch(e,x_test, options);
 end

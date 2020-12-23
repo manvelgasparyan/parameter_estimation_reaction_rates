@@ -26,10 +26,7 @@ x_hat = GH_Data_Species_Concentrations (mu_1, mu_2, T, H, S, y_hat, x_test)
 %==========================================================================
 %PAGE 2: Determination of the best-fitting parameter vector
 %--------------------------------------------------------------------------
-Error = @(k)GH_Objective_2(k, S, x_hat, y_hat, H)*any(k>0);
-%k_hat = fminsearch(Error, k_test)
-A = []; b = [];
-k_hat = fmincon(Error, k_test, [], [], [], [], 0, [], [])
+k_hat = GH_Parameters (k_test, S, x_hat, y_hat, H)
 %==========================================================================
 %PAGE 3: Observed experimental time-series data of reaction rates (in red) 
 %of the model of ryanodine receptor adaptation and the corresponding 

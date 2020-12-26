@@ -1,4 +1,3 @@
-close; clear; clc;
 %==========================================================================
 Data = load('GH_Available_Experimental_Data');
 %-----------------------
@@ -63,6 +62,6 @@ for i = 1:l
     legend(caption2, caption1)
     set(gca,'FontSize',12)
     xlabel({'Time','(in seconds)'})
-    title(caption3)
+    ylabel({caption3,'(in \muM s^{-1})'})
 end
 %==========================================================================

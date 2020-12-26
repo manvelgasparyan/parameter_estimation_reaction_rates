@@ -1,4 +1,3 @@
-clear; clc; close;
 %==========================================================================
 %PAGE 1: Inputs
 %-----------------------
@@ -31,7 +30,7 @@ sigma = Model.sigma;
 %Division of the time interval of interest
 N_1 = mu_1 + 1;
 %-----------------------------------------------------------------
-%{
+
 figure(1)
 for i = 1:l
     subplot(1,3,i)
@@ -47,7 +46,7 @@ for i = 1:l
     legend(caption1)
     set(gca,'FontSize',12)
     xlabel({'Time','(in seconds)'})
-    title(caption2)
+    ylabel({caption2, '(in \muM s^{-1})'})
 end
 %}
 %==========================================================================

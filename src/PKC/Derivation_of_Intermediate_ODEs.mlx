@@ -1,56 +1,51 @@
 %The input file
 Model = load('GH_PKC');
-%-------------------------------------------------------------------
+%-------------------------------------------------------------------------------------------------
 %The stoichiometrix matrix of the chemical reaction network 
 S = Model.S;
-%-------------------------------------------------------------------
+%-------------------------------------------------------------------------------------------------
 %The number of species and the reactions, respectively
 [s,r] = size(S);
-%-------------------------------------------------------------------
-%The vector of species' concentrations as an array of real 
-%symbolic variables
+%-------------------------------------------------------------------------------------------------
+%The vector of species' concentrations as an array of real symbolic variables
 syms x  [1 s]  real
 x = x';
 Gamma_x = diag(x);
-%-------------------------------------------------------------------
+%-------------------------------------------------------------------------------------------------
 %The vector of rate constants as an array of real symbolic variables
 syms k [1 r] real
 k = k';
-%-------------------------------------------------------------------
-%The vector of Michaelis constants as an array of real 
-%symbolic variables
+%-------------------------------------------------------------------------------------------------
+%The vector of Michaelis constants as an array of real symbolic variables
 q = 5;
 syms K [1 q] real
 K = K';
-%-------------------------------------------------------------------
-%The vector of unidirectional reaction rates as an array of real 
-%symbolic variables
+%-------------------------------------------------------------------------------------------------
+%The vector of unidirectional reaction rates as an array of real symbolic variables
 syms v [1 r] real
 v = v';
 Gamma_v = diag(v);
-%-------------------------------------------------------------------
-%The denominator terms in the expressions of reaction rates as an
-%array of real symbolic variables
+%-------------------------------------------------------------------------------------------------
+%The denominator terms in the expressions of reaction rates as an array of real symbolic variables
 g = GH_Denominator (x,K);
 Gamma_g = diag(g);
-%-------------------------------------------------------------------
-%The right-hand side of the balance laws as an array of 
-%real symbolic variables 
+%-------------------------------------------------------------------------------------------------
+%The right-hand side of the balance laws as an array of real symbolic variables 
 dx_dt = S*v;
-%-------------------------------------------------------------------
+%-------------------------------------------------------------------------------------------------
 %The gradient of g as an array of real symbolic variables
 grad_g = GH_Nabla_g (x,K);
-%-------------------------------------------------------------------
+%-------------------------------------------------------------------------------------------------
 for i = 1:r
     N_i = grad_g(i,:);
     output(i) = dot(N_i, dx_dt);
 end
-%-------------------------------------------------------------------
+%-------------------------------------------------------------------------------------------------
 %The function psi
 psi = simplify(output');
-%-------------------------------------------------------------------
+%-------------------------------------------------------------------------------------------------
 %The substrate composition matrix
 Delta = - min(S,0);
-%-------------------------------------------------------------------
+%-------------------------------------------------------------------------------------------------
 %The right-hand side of thesystem of interest
 dv_dt = Gamma_v*inv(Gamma_g)*psi + Gamma_v*Delta'*inv(Gamma_x)*S*v

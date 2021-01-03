@@ -3,11 +3,13 @@ This repository contains the Matlab library corresponding to the manuscript "Par
 The MATLAB library uses the information of a given CRN and the available observed time-series experimental data of reaction rates provided by the user to automatically  
 determine the best-fitting values of the parameters contained in the corresponding mathematical model. 
 
-We have provided two real-life computaional models of biologial processes retrieved from the BioModels database( see, [1] and https://www.ebi.ac.uk/biomodels/). For each of these models we first generate data corresponding to the overall outgoing reaction rates with initially provided values of parameters involved in the model. Next, we perturbe these data with a white Gaussian noise with zero mean and sfficiently small standard deviation. We then apply our parameter estimation technique to determine the best-fitting values of parameters in a fully automated model.
+We have provided two real-life computaional models of biologial processes retrieved from the BioModels database (see, [1] and https://www.ebi.ac.uk/biomodels/). For each of these models we first generate data corresponding to the overall outgoing reaction rates with initially provided values of parameters involved in the model. Next, we perturbe these data with a white Gaussian noise with zero mean and sfficiently small standard deviation. We then apply our parameter estimation technique to determine the best-fitting values of parameters in a fully automated model.
 
 The first one of these realistic examples is a model of Ryanodine Receptor Adaptation (RyRA) (see, [2]), which is a model of a network governed by mass action kinetic rate law. The second example is a model of Protein Kinease Cascades (PKC) (see, [3]), which is a model of a network governed by reversible Michaelis-Menten kinetics. The schematic representations of these two models can be found in the file named "Schematic" located in the folder "Figures". Since the governing laws of these two examples of CRNs are different, we consider the parameter estimation problem for each of these CRNs separately. 
 
-WE ARE HERE
+For each of these models, since we are not conducting experiments, we generate data corresponding to the reaction rates using the values of parameters provided in the corresponding reference. Next, we perturb with a white Gaussian noise with zero mean and sufficiently small standard deviation. We then apply our estimation technique to determine the best-fitting values of parameters in a fully automated manner. 
+
+We are HERE
 
 The input files corresponding to each example can be found in the folder "Examples" located in the folder "scr". For each example, there are two 
 input files, namely, "Inputs" and "Denominator".

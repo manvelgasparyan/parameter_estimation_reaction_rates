@@ -3,5 +3,3 @@ function [k_hat] = GH_Rate_Constants (mu_1, T, K_hat, S, x_hat, k_test)
     %------------------------------------------------------------
     k_hat = fminsearch(e_2,k_test);
 end
-
-

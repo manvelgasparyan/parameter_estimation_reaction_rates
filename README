@@ -8,7 +8,7 @@ The first one of these realistic examples is a model of Ryanodine Receptor Adapt
 
 For each of these models, since we are not conducting experiments, we generate data corresponding to the reaction rates using the values of parameters provided in the corresponding reference. Next, we perturb with a white Gaussian noise with zero mean and sufficiently small standard deviation. We then apply our estimation technique to determine the best-fitting values of parameters in a fully automated manner. 
 
-The Matlab library uses the information of a given biochemical reaction network provided by the user to automatically reduce the corresponding mathematical model
+The Matlab library uses the information of a given biochemical reaction network provided by the user to automatically estimate the parameters involved in the corresponding mathematical model.
 
 In order to proceed with the parameter estimation, the user needs to:
         
@@ -28,7 +28,7 @@ In order to proceed with the parameter estimation, the user needs to:
               
 The automatic parameter estimation procedure provides the following outputs:
 
-     1. The time-series data of overall outgoing reaction rates corresponding to the mathematical model with parameter values provided in the corresponding reference.
+     1. The generated time-series data of overall outgoing reaction rates
      2. The mathematical model with the best-fitting values of parameters 
      3. The comparison of the time-series data of overal outgoing reaction rates and the corresponding model-predicted valeus  
      

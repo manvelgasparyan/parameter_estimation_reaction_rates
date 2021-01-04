@@ -1,4 +1,4 @@
-This repository contains the Matlab library corresponding to the manuscript "Parameter estimation for chemical reaction networks from experimental data of reaction rates" published in "The Journal". The manuscript is available at "the Link".
+This repository contains the Matlab library corresponding to the manuscript "Parameter estimation for biochemical reaction networks from experimental data of reaction rates" published in "The Journal". The manuscript is available at "the Link".
 
 The MATLAB library uses the information of a given CRN and the available observed time-series experimental data of reaction rates provided by the user to automatically  
 determine the best-fitting values of the parameters contained in the corresponding mathematical model. 
@@ -9,19 +9,30 @@ The first one of these realistic examples is a model of Ryanodine Receptor Adapt
 
 For each of these models, since we are not conducting experiments, we generate data corresponding to the reaction rates using the values of parameters provided in the corresponding reference. Next, we perturb with a white Gaussian noise with zero mean and sufficiently small standard deviation. We then apply our estimation technique to determine the best-fitting values of parameters in a fully automated manner. 
 
-We are HERE
+The Matlab library uses the information of a given biochemical reaction network provided by the user to automatically reduce the corresponding mathematical model
 
-The input files corresponding to each example can be found in the folder "Examples" located in the folder "scr". For each example, there are two 
-input files, namely, "Inputs" and "Denominator".
+In order to proceed with the parameter estimation, the user needs to:
+        
+    1. For the model of RyRA.
+     
+        a. Open the files located in the folder "scr/RyRA" 
+        b. Run the file "GH_RyRA.m"
+        c. Run the file "GH_Available_Experimental_Data.m"
+        d. Run the file "GH_Parameter_Estimation_Procedure.m"
+        
+    2. For the model of PKC.
+     
+        a. Open the files located in the folder "scr/PKC" 
+        b. Run the file "GH_PKC.m"
+        c. Run the file "GH_Available_Experimental_Data.m"
+        d. Run the file "GH_Parameter_Estimation_Procedure.m"
+              
+The automatic parameter estimation procedure provides the following outputs:
 
-The file named "Inputs" contains the following information of a given CRN
-     1. The complex composition matrix.
-     2. The incidence matrix.
-     3. The vector of rate constants of the reactions.
-     4. The vector of initial species' concentrations.
-     5. The user-specified threshold value of the error integral. 
-
-
+     1. The time-series data of overall outgoing reaction rates corresponding to the mathematical model with parameter values provided in the corresponding reference.
+     2. The mathematical model with the best-fitting values of parameters 
+     3. The comparison of the time-series data of overal outgoing reaction rates and the corresponding model-predicted valeus  
+     
 REFERENCES
 
 [1]  Nicolas Le Novere et al. 

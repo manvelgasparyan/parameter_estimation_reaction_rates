@@ -1,7 +1,6 @@
 This repository contains the Matlab library corresponding to the manuscript "Parameter estimation for biochemical reaction networks from experimental data of reaction rates" published in "The Journal". The manuscript is available at "the Link".
 
-The MATLAB library uses the information of a given CRN and the available observed time-series experimental data of reaction rates provided by the user to automatically  
-determine the best-fitting values of the parameters contained in the corresponding mathematical model. 
+The MATLAB library uses the information of a given CRN and the available observed time-series experimental data of reaction rates provided by the user to automatically determine the best-fitting values of the parameters contained in the corresponding mathematical model. 
 
 We have provided two real-life computaional models of biologial processes retrieved from the BioModels database (see, [1] and https://www.ebi.ac.uk/biomodels/). For each of these models we first generate data corresponding to the overall outgoing reaction rates with initially provided values of parameters involved in the model. Next, we perturbe these data with a white Gaussian noise with zero mean and sfficiently small standard deviation. We then apply our parameter estimation technique to determine the best-fitting values of parameters in a fully automated model.
 

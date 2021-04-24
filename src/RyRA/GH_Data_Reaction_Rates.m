@@ -33,7 +33,7 @@ function [t, y_hat] = GH_Data_Reaction_Rates (k, S, H, T, mu_1, x_0, sigma)
       y_hat = y;
    else
    %-----------------------------------------------------------------------
-   %Generating a randow white Gaussian noise. Note that every time this
+   %Generating a random white Gaussian noise. Note that every time this
    %noise will be different, which means that the final result will also be
    %different
    matrix = [0.6948    0.0344    0.7655    0.4898    0.7094    0.6797;
